@@ -1,9 +1,18 @@
 package sample;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+
 public class TrafficLights {
-    public void settings(){
+
+    public int lengthSettings(){
         Controller controller = new Controller();
-        int redLight_Length = controller.getRedLightLength();
-        int greenLight_Length = controller.getGreenLightLength();
+        return (1000 * controller.getRedLightLength());
     }
+
+    public boolean lightSettings(){
+        boolean canIGo = true;
+        return canIGo;
+    }
+
 }

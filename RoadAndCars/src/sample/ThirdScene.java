@@ -2,28 +2,47 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-public class ThirdScene {
-    static Stage stage;
+import static java.lang.Thread.sleep;
 
-    public void start(Stage primaryStage) throws  Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("thirdScene.fxml"));
-        Scene scene = new Scene(root);
+public class ThirdScene{
+    public void action(){
+        try {
+            Pane root = FXMLLoader.load(getClass().getResource("thirdScene.fxml"));
+            Stage stage = new Stage();
 
-        Car car = new Car();
-        car.loadImage();
+            Group group = new Group();
 
-        stage=primaryStage;          //заносим в поле
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            Car car = new Car();
+            Rectangle carObj = car.movingStraight();
+            Rectangle carObj2 = car.movingTurn();
+
+            stage.setTitle("Roads");
+            root.getChildren().addAll(carObj, carObj2);
+
+            stage.setScene(new Scene(root, 400, 400));
+            stage.show();
+        }
+        catch (IOException  e) {
+            e.printStackTrace();
+        }
     }
-    @FXML
-    public void okButton(ActionEvent event) throws Exception {     //Это событие кнопки
-        stage.close();      //Закрываете окно
-    }
+
+    TrafficLights trafficLights = new TrafficLights();
+    Boolean canIGo = trafficLights.lightSettings();
+
 }
+
+

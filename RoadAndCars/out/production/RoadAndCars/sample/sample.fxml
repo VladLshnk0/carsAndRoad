@@ -14,12 +14,10 @@
       <AnchorPane prefHeight="400.0" prefWidth="400.0">
          <children>
             <Button fx:id="nextButton" layoutX="299.0" layoutY="347.0" mnemonicParsing="false" text="Next" onAction="#goOnAction" />
-            <TextField fx:id="redLight_Lenght" layoutX="150.0" layoutY="75.0" prefHeight="25.0" prefWidth="88.0" />
-            <TextField fx:id="greenLight_Length" layoutX="150.0" layoutY="140.0" prefHeight="25.0" prefWidth="88.0" />
-            <Label layoutX="52.0" layoutY="79.0" text="Label" />
-            <Label layoutX="52.0" layoutY="144.0" text="Label" />
-            <TextField fx:id="carsPerMin" layoutX="150.0" layoutY="205.0" prefHeight="25.0" prefWidth="88.0" />
-            <Label layoutX="52.0" layoutY="209.0" text="Label" />
+            <TextField fx:id="redLight_Lenght" layoutX="250.0" layoutY="75.0" prefHeight="25.0" prefWidth="88.0" />
+            <Label layoutX="52.0" layoutY="79.0" text="Длинна горения красного света" />
+            <TextField fx:id="carsPerMin" layoutX="250.0" layoutY="205.0" prefHeight="25.0" prefWidth="88.0" />
+            <Label layoutX="52.0" layoutY="209.0" text="Количество машин за минуту" />
          </children>
       </AnchorPane>
    </children>
